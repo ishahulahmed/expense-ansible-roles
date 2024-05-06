@@ -6,7 +6,7 @@
       instance_type: t2.micro
       name: "{{ item }}"
       security_group: allow-everything # replace with your AWS values
-      image_id: ami-090252cbe067a9e58
+      image_id: ami-090252cbe067a9e58 # replace with your desired AMI ID
       tags:
         Name: "{{ item }}"
     loop:
