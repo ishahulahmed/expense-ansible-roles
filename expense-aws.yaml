@@ -10,9 +10,9 @@
       tags:
         Name: "{{ item }}"
     loop:
-    -db
-    -backend
-    -frontend
+    - db
+    - backend
+    - frontend
     register: ec2_instances_info 
 
 
