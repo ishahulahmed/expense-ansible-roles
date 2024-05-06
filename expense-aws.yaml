@@ -1,0 +1,18 @@
+- name: create ec2 and r53 records
+  hosts: localhost
+  tasks:
+  - name: create ec2 instances
+    amazon.aws.ec2_instance:
+      instance_type: t2.micro
+      name: "{{ item }}"
+      security_group: allow-everything # replace with your AWS values
+      image_id: ami-090252cbe067a9e58
+      tags:
+        Name: "{{ item }}"
+    loop:
+    -db
+    -backend
+    -frontend
+    register: ec2_instances_info 
+
+
